@@ -26,6 +26,11 @@ var articles={
         no:"three"
     }
 };
+var articleOne={
+        name:"vaibhav",
+        surname:"dodiya",
+        no:"one"
+    };
 function creat(data){
     var name=data.name;
     var surname=data.surname;
@@ -44,9 +49,9 @@ function creat(data){
     `;
     return html;
 }
-app.get('/:articleName', function (req, res) {
-  var name=req.param.articleName;
-  res.send(creat(articles[articleName]));
+app.get('/article-one', function (req, res) {
+  //var name=req.param.articleName;
+  res.send(creat(articleOne));
 });
 
 
