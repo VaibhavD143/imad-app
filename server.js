@@ -44,7 +44,7 @@ function creat(data){
     `;
     return html;
 }
-app.get('/ui/:articleName', function (req, res) {
+app.get('/:articleName', function (req, res) {
   var name=req.param.articleName;
   res.send(creat(articles[name]));
 });
