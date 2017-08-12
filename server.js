@@ -9,6 +9,46 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
+var articles={
+    'article-one':{
+        name:"vaibhav",
+        surname:"dodiya",
+        no:"one"
+    },
+    'article-two':{
+        name:"vaibhav",
+        surname:"dodiya",
+        no:"two"
+    },
+    'article-three':{
+        name:"vaibhav",
+        surname:"dodiya",
+        no:"three"
+    }
+};
+function creat(data){
+    var name=data.name;
+    var surname=data.surname;
+    var no=data.no;
+    var html=`
+        <!doctype html>
+        <html>
+            <head>
+                <title>Article One</title>
+            </head>
+            <body>
+                M ${name} ${surname}
+                number is ${no}
+            </body>
+        </html>
+    `;
+    return html;
+}
+app.get('/ui/:articleName', function (req, res) {
+  var name=req.param.articleName;
+  res.send(creat(articles[name]));
+});
+
 app.get('/ui/article-one', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'article-one.html'));
 });
