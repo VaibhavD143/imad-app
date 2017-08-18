@@ -59,7 +59,7 @@ var names=['vaibhav'];
 app.get('/submit-name/:name', function (req, res) {
   names.push(req.params.name);
   //var name=req.param.articleName;
-  res.send(JSON.stringfy(names));
+  res.send(JSON.stringify(names));
 });
 
 
