@@ -56,7 +56,7 @@ app.get('/article-one', function (req, res) {
 
 app.get('/submit-name/:name', function (req, res) {
   //var name=req.param.articleName;
-  res.send(name);
+  res.send(req.params.name);
 });
 
 
