@@ -54,6 +54,11 @@ app.get('/article-one', function (req, res) {
   res.send(creat(articleOne));
 });
 
+app.get('/submit-name/:name', function (req, res) {
+  //var name=req.param.articleName;
+  res.send(name);
+});
+
 
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
