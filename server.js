@@ -54,9 +54,12 @@ app.get('/article-one', function (req, res) {
   res.send(creat(articleOne));
 });
 
+var names=['vaibhav'];
+
 app.get('/submit-name/:name', function (req, res) {
+  names.push(req.params.name);
   //var name=req.param.articleName;
-  res.send(req.params.name);
+  res.send(JSON.stringfy(names));
 });
 
 
